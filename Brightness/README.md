@@ -32,11 +32,15 @@ Make the script globally executable.
 
 `` sudo ln changebrightness /usr/local/bin/changebrightness ``
 
-For awesome Users:
+For awesomewm Users:
 
 ```lua
 globalkeys = gears.table.join(
-	
-	
+	...
+	awful.key({ modkey, "Control"   }, "u", function () awful.spawn("changebrightness up")         end,
+              {description = "increase the display brightness", group = "screen"}),
+    awful.key({ modkey, "Control"   }, "d", function () awful.spawn("changebrightness down")         end,
+              {description = "reduce the display brightness", group = "screen"}),
+    ...
 )
 ```
